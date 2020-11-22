@@ -9,6 +9,7 @@
   - __string.sh__
 
 - Biological sequence manipulation
+  - __blast_mcl_sequences.sh__ (module needed: idsSameCluster.py)
   - __splitIDsList.sh__
   - __runHMMER.sh__
   - __wrapperBlastp.sh__

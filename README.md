@@ -1,4 +1,4 @@
-## bash_scripts
+## bash scripts
 
 ### Repository containing some of my bash scripts for Bioinformatic tasks.
 

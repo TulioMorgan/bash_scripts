@@ -9,7 +9,7 @@
   - __string.sh__
 
 - Biological sequence manipulation
-  - __blast_mcl_sequences.sh__ (module needed: idsSameCluster.py)
-  - __splitIDsList.sh__
-  - __runHMMER.sh__
-  - __wrapperBlastp.sh__
+  - __blast_mcl_sequences.sh__ (script to obtain multiple nucleotide fasta files to build HMMs (HMMER). Module needed: idsSameCluster.py)
+  - __splitIDsList.sh__ (divides a large list of IDs into smaller ones).
+  - __runHMMER.sh__ (script to create HMMs (hmmbuild/hmmpress) and perform alignments against a genome (nhmmer))
+  - __wrapperBlastp.sh__ (Script to execute BLAST with multiple files (fasta)).

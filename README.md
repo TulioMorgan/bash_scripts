@@ -10,4 +10,4 @@
 
 - Biological sequence manipulation
   - __splitIDsList.sh__
-  - __runHMMER.sh_
+  - __runHMMER.sh__

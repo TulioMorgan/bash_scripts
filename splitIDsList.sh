@@ -13,14 +13,14 @@
 nomes=$(cat arquivos_lista_IDs.txt)
 i=0
 quebra=5000
+# percorre a variavel $nomes, que contem um ID por linha.
 for id in $nomes; do
-	
-	if [ $i -le $quebra ]; then
+	if [ $i -le $quebra ]; then # testa se 'i' ainda eh menor ou igual ao numero de IDs que devem estar em um mesmo arquivo
 		echo $id >> "splited_ids_"$quebra
 	fi
-	i=$(($i+1))
+	i=$(($i+1)) # soma unidade a variavel 'i'
 	
-	if [ $i -eq $quebra ]; then
-		quebra=$(($quebra+5000))
+	if [ $i -eq $quebra ]; then # testa se 'i' eh igual ao numero de IDs que devem estar em um mesmo arquivo
+		quebra=$(($quebra+5000)) # se verdadeiro, soma 5000 a variavel quebra, de modo que o ID 5001 (i=5001) seja salvo em outro arquivo (nomeado "splited_ids_"$quebra)
 	fi
 done

@@ -11,3 +11,4 @@
 - Biological sequence manipulation
   - __splitIDsList.sh__
   - __runHMMER.sh__
+  - __wrapperBlastp.sh__

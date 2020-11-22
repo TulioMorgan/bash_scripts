@@ -1,6 +1,6 @@
 ## bash_scripts
 
-### 
+### Repository containing some of my bash scripts for Bioinformatic tasks.
 
 - Cheat Sheets
   - __array.sh__

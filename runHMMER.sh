@@ -10,7 +10,7 @@
 # a file with multiple sequence alignment in fasta format must be provided.
 # It is necessary to add the hmmer executable to the PATH variable.
 
-export PATH=$PATH:/home/tuliomorgan/doutorado/programas/hmmer-3.2.1/bin
+export PATH=$PATH:/home/user/hmmer-3.2.1/bin # exporta executavel para variavel de ambiente $PATH
 
 # testar se a instabalacao do hmmer esta disponivel.
 executable_path=$(hmmbuild -h)
@@ -35,16 +35,16 @@ else
 	exit
 fi
 
-# abrir arquivo com nomes dos arquivos para serem analisados pelo HMMER.
+# abrir arquivo com nomes dos arquivos para serem analisados pelo HMMER (hmmbuild/hmmpress).
 nomes=$(cat $1) # lista_arquivos.txt contem os nomes dos arquivos de alinhamentos multiplo fasta para serem analisados.
 for file in $nomes; do
-	outfile=$file".hmm";
-	hmmbuild --dna --cpu 3 $outfile $file
-	hmmpress -f $outfile
+	outfile=$file".hmm"; # nome do arquivo de saida contendo os HMMs
+	hmmbuild --dna --cpu 3 $outfile $file # executa o hmmbuild
+	hmmpress -f $outfile # executa o hmmpress
 done
 
+# abrir arquivo com nomes dos arquivos para serem analisados pelo HMMER (nhmmer).
 for file in $nomes; do
-	outfile=$file".hmm_scanned"
-	echo $outfile
-	nhmmer --tblout $file".hmm_scanned" --cpu 3 --noali $file".hmm" $2
+	outfile=$file".hmm_scanned" # nome do arquivo de saida contendo os alinhamentos contra o HMMs criados anteriormente.
+	nhmmer --tblout $file".hmm_scanned" --cpu 3 --noali $file".hmm" $2 # executa o nhmmer
 done
